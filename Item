@@ -14,7 +14,13 @@ public class Video
 
     public Video()
     {
+        this.setAll(DEFAULT_NAME, DEFAULT_CHANNEL, DEFAULT_DESCRIPTION, DEFAULT_LENGTH,
+        DEFAULT_IS_PUBLIC, DEFAULT_HAS_CLOSED_CAPTIONS);
+    }
 
+    public Video(String name, String channel, String description, double length, boolean isPublic, boolean hasClosedCaptions)
+    {
+        this.setAll(name, channel, description, length, isPublic, hasClosedCaptions);
     }
 
     public void setName(String name)
