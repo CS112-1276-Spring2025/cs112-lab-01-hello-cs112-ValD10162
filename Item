@@ -1,9 +1,3 @@
-/**
- *  UML Diagram
- Variables
- -----------------------------------------
-
- */
 
 public class Video
 {
@@ -76,7 +70,14 @@ public class Video
 
     public String toString(String name, String channel, String description, double length, boolean isPublic, boolean hasClosedCaptions)
     {
-        
+        String result = "";
+
+        this.setAll(name, channel, description, length, isPublic, hasClosedCaptions);
+
+        result += String.format("%10sYoutube Video%10s", " ", " ");
+        result += String.format("Name: %");
+
+        return result;
     }
 
 }
