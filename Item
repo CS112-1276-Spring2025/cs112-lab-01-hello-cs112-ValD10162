@@ -68,14 +68,40 @@ public class Video
             return isValid;
     }
 
-    public String toString(String name, String channel, String description, double length, boolean isPublic, boolean hasClosedCaptions)
+    public String toString()
     {
         String result = "";
-
-        this.setAll(name, channel, description, length, isPublic, hasClosedCaptions);
+        String answerYes = "Yes";
+        String answerNo = "No"
+        String answer;
 
         result += String.format("%10sYoutube Video%10s", " ", " ");
-        result += String.format("Name: %");
+        result += String.format("Name: %20s", this.name);
+        result += String.format("Channel name: %20s", this.channel);
+        result += String.format("Description: %50s", this.description);
+        result += String.format("Video length: %4.2f", this.length);
+
+        if(isPublic == true)
+        {
+            answer = answerYes;
+        }
+        is(isPublic == false)
+        {
+            answer = answerNo;
+        }
+
+        result += String.format("Is it public?: %5s", answer);
+
+        if(hasClosedCaptions == true)
+        {
+            answer = answerYes;
+        }
+        if(hasClosedCaptions == false)
+        {
+            answer = answerNo;
+        }
+
+        result += String.format("Does it have captions?: %5s", answer);
 
         return result;
     }
