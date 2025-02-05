@@ -1,9 +1,9 @@
 
 public class Video
 {
-    private static String DEFAULT_NAME = " ";
-    private static String DEFAULT_CHANNEL = " ";
-    private static String DEFAULT_DESCRIPTION = " ";
+    private static String DEFAULT_NAME = "NULL";
+    private static String DEFAULT_CHANNEL = "NULL";
+    private static String DEFAULT_DESCRIPTION = "NULL";
     private static double DEFAULT_LENGTH = 0.00;
     private static boolean DEFAULT_IS_PUBLIC = false;
     private static boolean DEFAULT_HAS_CLOSED_CAPTIONS = false;
@@ -89,11 +89,11 @@ public class Video
         String answerNo = "No";
         String answer;
 
-        result += String.format("%10sYoutube Video%10s", " ", " ");
-        result += String.format("Name: %20s", this.name);
-        result += String.format("Channel name: %20s", this.channel);
-        result += String.format("Description: %50s", this.description);
-        result += String.format("Video length: %4.2f", this.length);
+        result += String.format("%10sYoutube Video%10s\n", " ", " ");
+        result += String.format("Name: %-20s\n", this.name);
+        result += String.format("Channel name: %-20s\n", this.channel);
+        result += String.format("Description: %-50s\n", this.description);
+        result += String.format("Video length: %4.2f\n", this.length);
 
         if (isPublic == true) {
             answer = answerYes;
@@ -104,7 +104,7 @@ public class Video
             answer = "Yes";
         }
 
-        result += String.format("Is it public?: %5s", answer);
+        result += String.format("Is it public?: %-3s\n", answer);
 
         if (hasClosedCaptions == true) {
             answer = answerYes;
@@ -113,14 +113,18 @@ public class Video
             answer = answerNo;
         }
 
-        result += String.format("Does it have captions?: %5s", answer);
+        result += String.format("Does it have captions?: %-3s\n", answer);
+        result += "\n";
 
         return result;
     }
     
-    public void equals(Video this, Video other)
+    public void equals(Video other)
     {
-        if(this.toString() == other.toString())
+
+        if(this.name == other.name && this.channel == other.channel
+            && this.description == other.description && this.length == other.length
+            && this.isPublic == other.isPublic && this.hasClosedCaptions == other.hasClosedCaptions)
         {
             System.out.println("It's a match!!");
         }
@@ -128,6 +132,7 @@ public class Video
         {
             System.out.println("Not even the same");
         }
+            
     }
 
 }

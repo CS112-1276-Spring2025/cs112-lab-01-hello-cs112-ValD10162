@@ -6,7 +6,17 @@ public class Main
         Main.sayHello();
         Main.randomNum();
 
-        Video test1 = new Video();
+        Video testDefault = new Video();
+        Video testFull = new Video("Totally real Youtube video", "real_channel", 
+                "An absolutely, positively, 100% genuine real video. Was this made up? Maybe", 10.45, true, false);
+        Video testCopy = new Video(testFull);
+
+        System.out.println(testDefault.toString());
+        System.out.println(testFull.toString());
+        System.out.println(testCopy.toString());
+
+        testCopy.equals(testFull);
+        testCopy.equals(testDefault);
 
 
     }
