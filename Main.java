@@ -6,6 +6,8 @@ public class Main
         Main.doNothing();
         Main.randomNum();
 
+        Video test1 = new Video();
+
 
     }
 

@@ -23,6 +23,12 @@ public class Video
         this.setAll(name, channel, description, length, isPublic, hasClosedCaptions);
     }
 
+    public Video(Video other)
+    {
+        this.setAll(other.name, other.channel, other.description, other.length, 
+        other.isPublic, other.hasClosedCaptions);
+    }
+
     public void setName(String name)
     {
         this.name = name;
@@ -63,13 +69,15 @@ public class Video
 
     public boolean setAll(String name, String channel, String description, double length, boolean isPublic, boolean hasClosedCaptions)
     {
-        boolean isValid = this.setLength(length) && this.setIsPublic(isPublic) && this.setHasClosedCaptions(hasClosedCaptions);
+        boolean isValid = this.setLength(length);
         
         if(isValid = true)
         {
         this.name = name;
         this.channel = channel;
         this.description = description;
+        this.isPublic = isPublic;
+        this.hasClosedCaptions = hasClosedCaptions;
         }
             return isValid;
     }
@@ -78,7 +86,7 @@ public class Video
     {
         String result = "";
         String answerYes = "Yes";
-        String answerNo = "No"
+        String answerNo = "No";
         String answer;
 
         result += String.format("%10sYoutube Video%10s", " ", " ");
@@ -91,9 +99,13 @@ public class Video
         {
             answer = answerYes;
         }
-        is(isPublic == false)
+        if(isPublic == false)
         {
             answer = answerNo;
+        }
+        else
+        {
+            answer = "Yes";
         }
 
         result += String.format("Is it public?: %5s", answer);
