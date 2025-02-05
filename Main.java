@@ -3,7 +3,7 @@ public class Main
     public static void main(String[] args) 
     {
         System.out.println("Welcome to CS 112!");
-        Main.doNothing();
+        Main.sayHello();
         Main.randomNum();
 
         Video test1 = new Video();
@@ -11,9 +11,9 @@ public class Main
 
     }
 
-    public static void doNothing()
+    public static void sayHello()
     {
-        //idk it does nothing
+        System.out.println("Hello!!");
     }
 
     public static double randomNum()

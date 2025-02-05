@@ -95,33 +95,39 @@ public class Video
         result += String.format("Description: %50s", this.description);
         result += String.format("Video length: %4.2f", this.length);
 
-        if(isPublic == true)
-        {
+        if (isPublic == true) {
             answer = answerYes;
         }
-        if(isPublic == false)
-        {
+        if (isPublic == false) {
             answer = answerNo;
-        }
-        else
-        {
+        } else {
             answer = "Yes";
         }
 
         result += String.format("Is it public?: %5s", answer);
 
-        if(hasClosedCaptions == true)
-        {
+        if (hasClosedCaptions == true) {
             answer = answerYes;
         }
-        if(hasClosedCaptions == false)
-        {
+        if (hasClosedCaptions == false) {
             answer = answerNo;
         }
 
         result += String.format("Does it have captions?: %5s", answer);
 
         return result;
+    }
+    
+    public void equals(Video this, Video other)
+    {
+        if(this.toString() == other.toString())
+        {
+            System.out.println("It's a match!!");
+        }
+        else
+        {
+            System.out.println("Not even the same");
+        }
     }
 
 }
